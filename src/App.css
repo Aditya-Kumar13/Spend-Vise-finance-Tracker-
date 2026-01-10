@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+body{
+  height: 100%;
+  width: 100%;
+  
+}
+
+/* 1. Hide scrollbar for Chrome, Safari, and newer versions o
