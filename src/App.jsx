@@ -17,6 +17,10 @@ const App = () => {
 
   const [income,setincome]=useState([]);
 
+  const [expensebtn,setexpensebtn] = useState(true);
+
+  const [incomebtn,setincomebtn]= useState(false);
+
 
   const [isexpense,setexpense]=useState(false);
 
@@ -128,7 +132,7 @@ const App = () => {
           Entertainment={Entertainment} Coffe={Coffe} Food={Food} Drinks={Drinks}/>
         </div>
         <div className="newadd w-1/2  h-80 flex justify-center">
-          <Quickadd isexpense={setexpense} setamount={setamount} setcat={setcat} addtrans={addtrans} amount={amount}/>
+          <Quickadd isexpense={setexpense} setamount={setamount} setcat={setcat} addtrans={addtrans} amount={amount} expensebtn={expensebtn} incomebtn={incomebtn} setexpensebtn={setexpensebtn} setincomebtn={setincomebtn}/>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Quickadd = ({isexpense,setamount,setcat, addtrans,amount}) => {
+const Quickadd = ({isexpense,setamount,setcat, addtrans,amount,expensebtn,setexpensebtn,incomebtn,setincomebtn}) => {
   return (
     <div className="max-h-2.5/3 w-2/3 bg-[#1D2025] m-2.5 rounded-2xl shadow-md shadow-gray-400 ">
         <div className="heading w-full text-center m-1.5">
@@ -9,8 +9,12 @@ const Quickadd = ({isexpense,setamount,setcat, addtrans,amount}) => {
         </div>
       <div className="type  ">
         <label className='flex justify-around mt-1.5'>
-            <button className='border-1 p-2.5 rounded-2xl cursor-pointer text-xl active:bg-white'onClick={()=>{isexpense(false)}} >INCOME</button>
-            <button className='border-1 p-2 rounded-2xl cursor-pointer text-xl' onClick={()=>{{isexpense(true)}}} >EXPENSE</button>
+            <button className={`border-1 p-2.5 rounded-2xl cursor-pointer text-xl ${incomebtn ? "bg-white text-black": "bg-black text-white"}`} onClick={()=>{isexpense(false);
+              setincomebtn(true) ; setexpensebtn(false);
+            }} >INCOME</button>
+            <button className={`border-1 p-2 rounded-2xl cursor-pointer text-xl ${expensebtn ? "bg-white text-black" : "bg-black text-white"}`} onClick={()=>{{isexpense(true);
+              setexpensebtn(true); setincomebtn(false)
+            }}} >EXPENSE</button>
         </label>
       </div>
       <div className="amounttrans p-13 pt-1 pb-0">
@@ -25,8 +29,8 @@ const Quickadd = ({isexpense,setamount,setcat, addtrans,amount}) => {
                 <h1>Category</h1>
             </div>
             <div className="selection pl-1.5 p-2 border-0 mt-2.5">
-                <select defaultValue={"Home"} onChange={(e)=>{
-                  setcat(e.target.value);
+                <select className='text-white bg-[#1D2025]' defaultValue={"Home"} onChange={(e)=>{
+                  setcat(e.target.value); 
                 }}>
                     <option value="Home">Home</option>
                     <option value="Entertainment">Entertainment</option>

@@ -9,10 +9,10 @@ const Recent = ({recenttrans,setfilter,filter,income,exp,Home,Entertainment,Coff
             <h1 className='text-2xl'>Recent Transactions</h1>
         </div>
         <div className="filter text-l flex justify-center items-center p-0.5 ">
-            <select className='text-white bg-transparent border-0'defaultValue={"All"} onChange={(Event)=>{
+            <select className='text-white bg-[#1D2025] border-0'defaultValue={"All"} onChange={(Event)=>{
               setfilter(Event.target.value);
             }} >
-                <option className='bg-transparent text-black' value={"All"} > All</option>
+                <option  value={"All"} > All</option>
                 <option value={"Expenses"} >Expenses</option>
                 <option value={"Income"}>Income</option>
                 <option value={"Home"}>Home</option>
