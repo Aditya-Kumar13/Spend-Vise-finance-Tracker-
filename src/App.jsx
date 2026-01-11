@@ -53,6 +53,11 @@ const App = () => {
     setamount("")
   }
 
+  const dlt = (dltindex)=>{
+    const item = recenttrans.filter((t)=>t.id !== dltindex)
+    setrecenttrans(item);
+  }
+
   useEffect(()=>{
     if(recenttrans){
       const out = recenttrans.filter(item => item.type==="Expenses");
@@ -129,7 +134,7 @@ const App = () => {
       <div className="lastsection flex w-full">
         <div className="transctions w-1/2  h-80 flex justify-center">
           <Recent recenttrans={recenttrans} setfilter={setfilter} filter={filter} income={income} exp={exp} Home={Home}
-          Entertainment={Entertainment} Coffe={Coffe} Food={Food} Drinks={Drinks}/>
+          Entertainment={Entertainment} Coffe={Coffe} Food={Food} Drinks={Drinks} dlt={dlt}/>
         </div>
         <div className="newadd w-1/2  h-80 flex justify-center">
           <Quickadd isexpense={setexpense} setamount={setamount} setcat={setcat} addtrans={addtrans} amount={amount} expensebtn={expensebtn} incomebtn={incomebtn} setexpensebtn={setexpensebtn} setincomebtn={setincomebtn}/>

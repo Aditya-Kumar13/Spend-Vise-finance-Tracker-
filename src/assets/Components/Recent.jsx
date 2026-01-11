@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Card from './Card'
-const Recent = ({recenttrans,setfilter,filter,income,exp,Home,Entertainment,Coffe,Food,Drinks}) => {
+const Recent = ({recenttrans,setfilter,filter,income,exp,Home,Entertainment,Coffe,Food,Drinks,dlt}) => {
   
   return (
     <div className='max-h-2.5/3 w-2/3 bg-[#1D2025] m-2.5 rounded-2xl shadow-md shadow-gray-400 '>
@@ -26,30 +26,30 @@ const Recent = ({recenttrans,setfilter,filter,income,exp,Home,Entertainment,Coff
       <div className="track h-10/13 m-3 overflow-scroll overflow-x-hidden">
         {filter==="All" && recenttrans && recenttrans.map((item, index) => (
           // 3. Pass data to Card and add a unique key
-          <Card key={index} data={item} />))}
+          <Card key={index} data={item} dlt={dlt}/>))}
         
         {filter==="Expenses" && exp && exp.map((item, index) => (
           // 3. Pass data to Card and add a unique key
-          <Card key={index} data={item} />))}
+          <Card key={index} data={item} dlt={dlt}/>))}
         
         {filter==="Income" && income && income.map((item, index) => (
           // 3. Pass data to Card and add a unique key
-        <Card key={index} data={item}/>))}
+        <Card key={index} data={item} dlt={dlt}/>))}
         {filter==="Home" && Home && Home.map((item, index) => (
           // 3. Pass data to Card and add a unique key
-        <Card key={index} data={item} />))}
+        <Card key={index} data={item} dlt={dlt} />))}
         {filter==="Entertainment" && Entertainment && Entertainment.map((item, index) => (
           // 3. Pass data to Card and add a unique key
-        <Card key={index} data={item} />))}
+        <Card key={index} data={item} dlt={dlt}/>))}
         {filter==="Coffe" && Coffe && Coffe.map((item, index) => (
           // 3. Pass data to Card and add a unique key
-        <Card key={index} data={item} />))}
+        <Card key={index} data={item} dlt={dlt}/>))}
         {filter==="Food" && Food && Food.map((item, index) => (
           // 3. Pass data to Card and add a unique key
-        <Card key={index} data={item} />))}
+        <Card key={index} data={item} dlt={dlt}/>))}
         {filter==="Drinks" && Drinks && Drinks.map((item, index) => (
           // 3. Pass data to Card and add a unique key
-        <Card key={index} data={item} />))}
+        <Card key={index} data={item} dlt={dlt}/>))}
         
         
       </div>
