@@ -41,6 +41,9 @@ const App = () => {
 
   const [Drinks,setDrinks]=useState([])
 
+  const month = new Date().toLocaleString('default',{month:"long"});
+  const year = new Date().toLocaleString('default',{year:"numeric"})
+
   const addtrans= ()=>{
     const entry ={
       id: Date.now(),
@@ -126,7 +129,7 @@ const App = () => {
   return (
     <div className="h-full">
       <div className="navbar">
-        <Nav/>
+        <Nav month={month} year={year}/>
       </div>
       <div className="Balanceupdate h-85 w-full flex justify-center items-center ">
         <Balance totalexpense={totalexpense} totalincome={totalincome} total={total}/>
