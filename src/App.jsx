@@ -3,11 +3,16 @@ import Nav from './assets/Components/Nav'
 import Balance from './assets/Components/Balance'
 import Recent from './assets/Components/Recent'
 import Quickadd from './assets/Components/Quickadd'
+import {getlocalstorge, setlocalstorege} from './assets/Components/Ls'
+
+
 const App = () => {
 
-  const [recenttrans,setrecenttrans]=useState([]);
+  const [recenttrans,setrecenttrans]=useState(()=>getlocalstorge());
 
   const [total,settotal]=useState(0)
+
+  setlocalstorege(recenttrans);
 
   const [totalincome,settotalincome]= useState(0);
 
@@ -22,7 +27,7 @@ const App = () => {
   const [incomebtn,setincomebtn]= useState(false);
 
 
-  const [isexpense,setexpense]=useState(false);
+  const [isexpense,setexpense]=useState(true);
 
 
   const [amount,setamount]=useState("")
